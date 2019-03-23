@@ -1,0 +1,36 @@
+@import '~normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+@import 'utils';
+@import 'typography';
+
+:root {
+  --veryLightGrey: #{$veryLightGrey};
+  --lightGrey: #{$lightGrey};
+  --darkGrey: #{$darkGrey};
+  --blueGrey: #{$blueGrey};
+  --blue: #{$blue};
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $veryLightGrey;
+  background-image: radial-gradient(
+    ellipse at 0 0,
+    var(--veryLightGrey) 50%,
+    rgba(51, 230, 255, 0.1) 100%
+  );
+  overflow-y: scroll;
+}
+
+img {
+  max-width: 100%;
+}

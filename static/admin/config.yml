@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: master
+  accept_roles:
+    - admin
+    - editor
+
+site_url: https://dunder.photography
+media_folder: static/img
+public_folder: img
+logo_url: /img/logo.png
+
+collections:
+  - name: 'picture'
+    label: 'Picture'
+    description: 'A picture'
+    folder: 'src/content/pictures'
+    create: true
+    slug: 'pic/{{title}}'
+    identifier_field: 'title'
+    extension: 'json'
+    format: 'json'
+    editor:
+      preview: false
+    fields:
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'file', label: 'File', widget: 'image', allow_multiple: false }
+      - { name: 'alt', label: 'Alt', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'markdown' }
+      - { name: 'tags', label: 'Tags', widget: 'list' }

@@ -1,0 +1,44 @@
+@import 'utils';
+
+.Viewport {
+  width: 100%;
+}
+
+.LayoutWrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include multiColumn {
+    padding: 0;
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: $sidebarWidth 1fr;
+    border-right: 1px solid $lightGrey;
+  }
+
+  @include big {
+    width: 100%;
+    padding: 0;
+  }
+
+  &.TopSpace {
+    margin-top: 0;
+
+    @include multiColumn {
+      margin-top: $margin * 1.5;
+    }
+  }
+}
+
+.Page {
+  margin-top: $margin;
+  margin-bottom: $margin;
+  width: 100%;
+  padding: 0 $margin;
+}
+
+.PageContent {
+}
