@@ -4,21 +4,21 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import get from 'lodash/get'
 import styles from '../style/Picture.module.scss'
+import Picture from '../components/Picture'
 
 class PictureRoute extends React.Component {
   render() {
     const { data } = this.props
     const picture = get(data, 'picture', {})
-    const { title, file, alt, description } = picture
+    const { title } = picture
 
     return (
       <Layout>
         <Helmet>
           <title>{`${title} by Daniel Dunderfelt`}</title>
         </Helmet>
-        <div className={styles.PictureContainer}>
-          <img className={styles.Picture} alt={alt} src={file} />
-          <div className={styles.Description}>{description}</div>
+        <div className={styles.PicturePage}>
+          <Picture picture={picture} />
         </div>
       </Layout>
     )
@@ -34,6 +34,7 @@ export const picturePageQuery = graphql`
       file
       alt
       description
+      tags
     }
   }
 `

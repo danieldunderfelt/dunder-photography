@@ -23,10 +23,11 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allPicture {
+    allPicture(sort: { fields: [timestamp], order: DESC }) {
       edges {
         node {
           title
+          timestamp
           file
           alt
           description

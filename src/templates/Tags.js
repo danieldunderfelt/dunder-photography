@@ -17,9 +17,7 @@ const TagRoute = ({ data, pageContext }) => {
         <title>{`Tagged with ${tag} | ${config.siteTitle}`}</title>
       </Helmet>
       <div>
-        <h3 className={styles.ListHeading}>
-          <strong className={styles.HeadingTag}>{tag}</strong>
-        </h3>
+        <h3 className={styles.ListHeading}>{tag}</h3>
         <PictureIndex pictures={pictures} />
       </div>
     </Layout>
@@ -32,12 +30,13 @@ export const tagPageQuery = graphql`
   query TagPage($tag: String) {
     allPicture(
       limit: 1000
-      sort: { fields: [tags], order: DESC }
+      sort: { fields: [timestamp], order: DESC }
       filter: { tags: { in: [$tag] } }
     ) {
       edges {
         node {
           title
+          timestamp
           file
           alt
           description
