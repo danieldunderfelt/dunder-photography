@@ -19,13 +19,18 @@ module.exports = {
     'gatsby-plugin-catch-links',
     `gatsby-plugin-twitter`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Source Code Pro`,
-            variants: [`300`, `300i`, `400`, `400i`, `700`, `700i`],
-          },
+          'Barlow:100,300,400,700,900',
+          'Montserrat:100,300,400,700,900',
+          'Nunito+Sans:200,300,400,700,900',
+          'Nunito:200,300,400,700,900',
+          'Overpass:100,300,400,700,900',
+          'Oxygen:300,400,700',
+          'Raleway:100,200,300,400,700,900',
+          'Rubik:300,400,700,900',
+          'Work+Sans:100,300,400,700,900',
         ],
       },
     },

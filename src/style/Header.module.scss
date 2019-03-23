@@ -6,105 +6,29 @@
   justify-content: center;
   position: relative;
   margin-bottom: -0.5rem;
+  padding: $margin;
 
   @include multiColumn {
     justify-content: flex-start;
     margin: 0;
-    padding-top: $margin / 2;
-    border-left: 1px solid $lightGrey;
-    border-right: 1px solid $lightGrey;
+    padding: $margin / 2 0 0;
     position: relative;
   }
 }
 
 .Logo {
-  width: 150px;
   display: block;
-  margin: 0 auto $margin;
-
-  h1 {
-    display: inline;
-  }
-
-  @include multiColumn {
-    width: 200px;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-  }
 }
 
 .HeaderContent {
   @include multiColumn {
     position: fixed;
     width: $sidebarWidth;
+    padding: 1rem 1.75rem 1rem 1rem;
   }
 }
 
-.HeaderLinkList {
-  display: none;
-
-  @include multiColumn {
-    display: block;
-    margin-top: $margin * 2;
-  }
-}
-
-.LinkListHeading {
-  font-size: 0.875rem;
-  color: $blueGrey;
-  text-transform: uppercase;
-  margin-left: $margin;
-}
-
-.LinkList {
-  padding: 0 $margin;
-  list-style: none;
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-
-  a {
-    color: $blue;
-    display: inline-flex;
-    align-items: flex-start;
-  }
-
-  svg,
-  img {
-    display: inline-block;
-    width: 1rem;
-    margin-right: 0.75rem;
-    margin-top: 6px;
-  }
-}
-
-.PageList {
-  margin: $margin * 1.25 0 $margin;
-  padding: $margin * 0.75 $margin 0;
-  border-top: 1px solid $lightGrey;
-  list-style: none;
-  font-size: 0.875rem;
-
-  li {
-    margin-top: 0.5rem;
-    margin-right: 1rem;
-    color: $blueGrey;
-  }
-
-  a {
-    color: inherit;
-    display: inline-flex;
-    align-items: flex-start;
-  }
-
-  svg,
-  img {
-    display: inline-block;
-    margin-right: 0.75rem;
-    margin-top: 4px;
-  }
+.HeaderText {
+  margin-top: 2rem;
+  line-height: 1.5;
 }

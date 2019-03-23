@@ -5,13 +5,13 @@ import Layout from '../components/Layout'
 import get from 'lodash/get'
 import styles from '../style/Picture.module.scss'
 import Picture from '../components/Picture'
+import PictureTags from '../components/PictureTags'
 
 class PictureRoute extends React.Component {
   render() {
     const { data } = this.props
-    console.log(this.props)
     const picture = get(data, 'picture', {})
-    const { title } = picture
+    const { title, tags, description } = picture
 
     return (
       <Layout>
@@ -19,7 +19,10 @@ class PictureRoute extends React.Component {
           <title>{`${title} by Daniel Dunderfelt`}</title>
         </Helmet>
         <div className={styles.PicturePage}>
-          <Picture picture={picture} />
+          <h2 className={styles.PictureTitle}>{title}</h2>
+          <PictureTags tags={tags} />
+          <Picture picture={picture} showInfo={false} />
+          <div className={styles.Description}>{description}</div>
         </div>
       </Layout>
     )

@@ -16,7 +16,6 @@
     width: 100%;
     margin: 0 auto;
     grid-template-columns: $sidebarWidth 1fr;
-    border-right: 1px solid $lightGrey;
   }
 
   @include big {

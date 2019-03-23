@@ -11,8 +11,6 @@
   --veryLightGrey: #{$veryLightGrey};
   --lightGrey: #{$lightGrey};
   --darkGrey: #{$darkGrey};
-  --blueGrey: #{$blueGrey};
-  --blue: #{$blue};
 }
 
 html,
@@ -22,12 +20,7 @@ body {
 }
 
 body {
-  background: $veryLightGrey;
-  background-image: radial-gradient(
-    ellipse at 0 0,
-    var(--veryLightGrey) 50%,
-    rgba(51, 230, 255, 0.1) 100%
-  );
+  background: #101117;
   overflow-y: scroll;
 }
 

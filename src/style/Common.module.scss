@@ -7,7 +7,6 @@
 
 .PageHeading {
   font-weight: 400;
-  color: $blueGrey;
   margin-top: $margin * 1.25;
 }
 
@@ -29,7 +28,7 @@
   border: 0;
 
   a {
-    color: $lightBlue;
+    color: $veryLightGrey;
   }
 
   @include medium {
@@ -72,4 +71,25 @@
 
 .BannerText {
   margin-right: $margin;
+}
+
+.Logo {
+  margin: 0;
+  padding: 0;
+  font-size: 1.72rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  color: #dddddd;
+  user-select: none;
+
+  .dunder {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .photography {
+    font-weight: 100;
+  }
 }

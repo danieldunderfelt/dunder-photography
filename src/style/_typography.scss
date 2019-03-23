@@ -2,8 +2,8 @@
 
 html {
   font-size: $smallFontSize;
-  font-family: 'Source Code Pro', sans-serif;
-  font-weight: 400;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
   line-height: 1.4;
   color: $textColor;
 
@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Code Pro', sans-serif;
+  font-family: inherit;
   color: $textColor;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -67,7 +67,6 @@ h6 {
 
 p {
   color: $textColor;
-  text-align: left;
   line-height: 1.4;
 
   &:first-child {
@@ -93,14 +92,14 @@ a {
 }
 
 p a {
-  color: $blue;
+  color: $veryLightGrey;
   transform: none;
   text-decoration: underline;
-  text-decoration-color: rgba($blue, 0);
+  text-decoration-color: rgba($veryLightGrey, 0);
   transition: text-decoration-color 0.1s ease-out;
 
   &:hover {
-    text-decoration-color: rgba($blue, 0.6);
+    text-decoration-color: rgba($veryLightGrey, 0.6);
     transform: none;
   }
 }
