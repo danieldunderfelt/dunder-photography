@@ -9,6 +9,7 @@ import Picture from '../components/Picture'
 class PictureRoute extends React.Component {
   render() {
     const { data } = this.props
+    console.log(this.props)
     const picture = get(data, 'picture', {})
     const { title } = picture
 
@@ -28,8 +29,8 @@ class PictureRoute extends React.Component {
 export default PictureRoute
 
 export const picturePageQuery = graphql`
-  query AuthorPage($title: String) {
-    picture(title: { eq: $title }) {
+  query AuthorPage($id: String) {
+    picture(id: { eq: $id }) {
       title
       file
       alt

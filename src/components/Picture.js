@@ -3,14 +3,18 @@ import React from 'react'
 import { kebabCase } from 'lodash'
 import { Link } from 'gatsby'
 
-const Picture = ({ picture }) => {
+const Picture = ({ picture, linkTo }) => {
   const { title, file, alt, description, tags } = picture || {}
+
+  const LinkComponent = linkTo ? Link : React.Fragment
 
   return (
     <div className={styles.PictureContainer}>
-      <h2 className={styles.PictureTitle}>{title}</h2>
-      <img className={styles.Picture} alt={alt} src={file} />
-      <div className={styles.Description}>{description}</div>
+      <LinkComponent to={linkTo}>
+        <h2 className={styles.PictureTitle}>{title}</h2>
+        <img className={styles.Picture} alt={alt} src={file} />
+        <div className={styles.Description}>{description}</div>
+      </LinkComponent>
       {tags && tags.length !== 0 && (
         <div className={styles.PictureTags}>
           <ul>

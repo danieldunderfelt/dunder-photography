@@ -57,9 +57,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-json',
       options: {
-        typeName: ({ node }) => {
-          return 'Picture'
-        },
+        typeName: 'Picture',
       },
     },
     {

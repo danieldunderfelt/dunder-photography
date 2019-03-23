@@ -7,11 +7,8 @@ import styles from '../../style/Picture.module.scss'
 import config from '../../../seoConfig'
 import Picture from '../../components/Picture'
 
-// TODO: Show all tags with the most recent picture
-
 const TagsPage = ({ data }) => {
   const tags = get(data, 'allPicture.group', [])
-  console.log(tags)
 
   return (
     <Layout>
@@ -21,9 +18,12 @@ const TagsPage = ({ data }) => {
         <section className={styles.PictureList}>
           {tags.map(({ fieldValue, nodes }) => {
             return (
-              <Link to={`/tags/${kebabCase(fieldValue)}/`}>
-                <Picture picture={nodes[0]} overlay={fieldValue} />
-              </Link>
+              <Picture
+                key={`tag_picture_${fieldValue}`}
+                linkTo={`/tags/${kebabCase(fieldValue)}/`}
+                picture={nodes[0]}
+                overlay={fieldValue}
+              />
             )
           })}
         </section>

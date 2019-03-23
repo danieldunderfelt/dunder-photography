@@ -16,8 +16,7 @@ collections:
     description: 'A picture'
     folder: 'src/content/pictures'
     create: true
-    slug: 'pic/{{title}}'
-    identifier_field: 'title'
+    slug: 'pic/{{slug}}'
     extension: 'json'
     format: 'json'
     editor:
