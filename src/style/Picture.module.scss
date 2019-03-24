@@ -118,6 +118,8 @@
 }
 
 .PictureList {
+  width: 100%;
+
   @include medium {
     column-count: 2;
     column-gap: 0;
