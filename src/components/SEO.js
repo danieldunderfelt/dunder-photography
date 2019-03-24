@@ -8,13 +8,13 @@ class SEO extends Component {
     const { post, postSEO } = this.props
     let title
     let description
-    let image
+    let image = ''
     let postUrl
 
     if (postSEO) {
       title = post.title
       description = post.description
-      image = post.imgUrl
+      image = post.image || ''
       postUrl = urljoin(config.siteUrl, config.pathPrefix, post.slug)
     } else {
       title = config.siteTitle

@@ -3,19 +3,30 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styles from '../style/Picture.module.scss'
-import get from 'lodash/get'
 import PictureIndex from '../components/PictureIndex'
-import config from '../../seoConfig'
+import SEO from '../components/SEO'
+import { kebabCase, get } from 'lodash'
 
 const TagRoute = ({ data, pageContext }) => {
   let pictures = get(data, 'allPicture.edges', [])
   const tag = pageContext.tag
+  const title = `${tag} on dunder.photography`
+  const firstPic = get(pictures, '[0].node.file')
 
   return (
     <Layout>
       <Helmet>
-        <title>{`Tagged with ${tag} | ${config.siteTitle}`}</title>
+        <title>{title}</title>
       </Helmet>
+      <SEO
+        post={{
+          title,
+          description: `Photos of subject: ${tag}`,
+          image: firstPic,
+          slug: `tags/${kebabCase(tag)}`,
+        }}
+        postSEO={true}
+      />
       <div>
         <h3 className={styles.ListHeading}>{tag}</h3>
         <PictureIndex pictures={pictures} />

@@ -6,18 +6,29 @@ import get from 'lodash/get'
 import styles from '../style/Picture.module.scss'
 import Picture from '../components/Picture'
 import PictureTags from '../components/PictureTags'
+import SEO from '../components/SEO'
+import { kebabCase } from 'lodash'
 
 class PictureRoute extends React.Component {
   render() {
     const { data } = this.props
     const picture = get(data, 'picture', {})
-    const { title, tags, description } = picture
+    const { title, tags, description, file } = picture
 
     return (
       <Layout>
         <Helmet>
           <title>{`${title} by Daniel Dunderfelt`}</title>
         </Helmet>
+        <SEO
+          post={{
+            title,
+            description,
+            image: file,
+            slug: `pic/${kebabCase(title)}`,
+          }}
+          postSEO={true}
+        />
         <div className={styles.PicturePage}>
           <Picture picture={picture} showInfo={false} />
           <div className={styles.PictureInfo}>
