@@ -1,31 +1,20 @@
 @import 'utils';
 
 .Header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   position: relative;
-  margin-bottom: -0.5rem;
-  padding: $margin;
-
-  @include multiColumn {
-    justify-content: flex-start;
-    margin: 0;
-    padding: $margin / 2 0 0;
-    position: relative;
-  }
+  margin: 0;
+  padding: 0;
 }
 
-.Logo {
-  display: block;
+.LogoLink {
 }
 
 .HeaderContent {
-  @include multiColumn {
-    position: fixed;
-    width: $sidebarWidth;
-    padding: 1rem 1.75rem 1rem 1rem;
-  }
+  width: 3rem;
+  padding: 0.5rem;
+  background: $dark;
+  height: 100%;
+  color: #ddd;
 }
 
 .HeaderText {

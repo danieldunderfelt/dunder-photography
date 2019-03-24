@@ -4,7 +4,7 @@ $fontSize: 18px;
 $mediumFontSize: 16px;
 $smallFontSize: 14px;
 $margin: 1.5rem;
-$sidebarWidth: 16rem;
+$sidebarWidth: 3rem;
 
 // Breakpoints
 $mediumWidth: 920px;
@@ -17,7 +17,8 @@ $veryLightGrey: #f9f9f9;
 $lightGrey: #d0d0d0;
 $grey: #858585;
 $darkGrey: #444444;
+$dark: #101114;
 
 // Color placements
 $dividerColor: $darkGrey;
-$textColor: $white;
+$textColor: $dark;

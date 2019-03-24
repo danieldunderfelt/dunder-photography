@@ -6,38 +6,12 @@
 
 .LayoutWrapper {
   width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
+  height: 100vh;
   overflow: hidden;
-
-  @include multiColumn {
-    padding: 0;
-    display: grid;
-    width: 100%;
-    margin: 0 auto;
-    grid-template-columns: $sidebarWidth 1fr;
-  }
-
-  @include big {
-    width: 100%;
-    padding: 0;
-  }
-
-  &.TopSpace {
-    margin-top: 0;
-
-    @include multiColumn {
-      margin-top: $margin * 1.5;
-    }
-  }
+  display: flex;
 }
 
 .Page {
-  margin-top: $margin;
-  margin-bottom: $margin;
-  width: 100%;
-  padding: 0 $margin;
-}
-
-.PageContent {
+  height: 100%;
+  overflow-y: scroll;
 }

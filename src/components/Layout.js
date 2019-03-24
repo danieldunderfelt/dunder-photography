@@ -32,36 +32,36 @@ const TemplateWrapper = ({ children }) => (
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/img/apple-touch-icon.png"
+            href="/img/site/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/img/favicon-128x128.png?v=1"
+            href="/img/site/favicon-128x128.png?v=1"
             sizes="128x128"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/img/favicon-64x64.png?v=1"
+            href="/img/site/favicon-64x64.png?v=1"
             sizes="64x64"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/img/favicon-32x32.png?v=1"
+            href="/img/site/favicon-32x32.png?v=1"
             sizes="32x32"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/img/favicon-16x16.png?v=1"
+            href="/img/site/favicon-16x16.png?v=1"
             sizes="16x16"
           />
 
           <link
             rel="mask-icon"
-            href="/img/safari-pinned-tab.svg"
+            href="/img/site/safari-pinned-tab.svg"
             color="#ff4400"
           />
           <meta name="theme-color" content="#fff" />
@@ -73,7 +73,7 @@ const TemplateWrapper = ({ children }) => (
         <div className={styles.Viewport}>
           <div className={classnames(styles.LayoutWrapper)}>
             <Header />
-            {children}
+            <div className={styles.Page}>{children}</div>
           </div>
         </div>
       </>

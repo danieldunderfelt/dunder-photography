@@ -2,13 +2,13 @@ module.exports = {
   pathPrefix: '/',
   siteTitle: `Dunder Photography`,
   siteTitleAlt: `dunder.photography`,
-  siteLogo: '/img/logo.png',
+  siteLogo: '/img/site/logo.png',
   siteUrl: 'https://dunder.photography',
   siteUrlShort: 'dunder.photography',
   siteDescription:
     'Photography showcase by Daniel Dunderfelt.',
   siteKeyWords: 'photography, portfolio, showcase, dunderfelt',
-  favicon: '/img/favicon-32x32.png?v=1',
+  favicon: '/img/site/favicon-128x128.png?v=2',
   twitterHandle: '@ddunderfelt',
-  twitterSiteImg: '/img/og-image.png',
+  twitterSiteImg: '/img/site/og-image.png',
 }

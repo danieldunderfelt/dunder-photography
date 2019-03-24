@@ -2,9 +2,10 @@
 
 %overlay {
   position: absolute;
-  pointer-events: none;
   transition: opacity 0.2s ease-out;
   padding: $margin;
+  color: #ffffff;
+  pointer-events: none;
 }
 
 .ListHeading {
@@ -12,11 +13,16 @@
 
 .PictureContainer {
   position: relative;
+  overflow: hidden;
 
   &:hover {
     %overlay {
       opacity: 1;
       pointer-events: all;
+    }
+
+    .Picture {
+      transform: scale(1.02) rotate(1deg);
     }
   }
 }
@@ -30,19 +36,24 @@
   opacity: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.95) 00%,
-    rgba(0, 0, 0, 0) 40%,
-    rgba(0, 0, 0, 0) 80%,
-    rgba(0, 0, 0, 0.75) 100%
+    rgba(0, 0, 0, 0.75) 00%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.7) 100%
   );
 }
 
 .Picture {
   display: block;
+  transition: transform 0.5s ease-out;
 }
 
 .PictureTitle {
   margin-top: 0;
+  color: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .Description {
@@ -85,12 +96,17 @@
 }
 
 .PictureList {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  column-count: 3;
+  column-gap: 0;
 
   .PictureContainer {
-    flex: 1 1 33%;
+    width: 100%;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    -o-column-break-inside: avoid;
+    -ms-column-break-inside: avoid;
+    column-break-inside: avoid;
+    -webkit-backface-visibility: hidden;
   }
 }
 
