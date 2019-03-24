@@ -8,10 +8,6 @@ html {
   color: $textColor;
 
   @include medium {
-    font-size: $mediumFontSize;
-  }
-
-  @include big {
     font-size: $fontSize;
   }
 }

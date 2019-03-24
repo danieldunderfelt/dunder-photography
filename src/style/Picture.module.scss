@@ -69,6 +69,7 @@
   margin: 0 0 ($margin / 2);
   padding: 1rem 1rem 0;
   list-style: none;
+  font-size: 0.875rem;
 
   li {
     white-space: nowrap;
@@ -96,8 +97,15 @@
 }
 
 .PictureList {
-  column-count: 3;
-  column-gap: 0;
+  @include medium {
+    column-count: 2;
+    column-gap: 0;
+  }
+
+  @include big {
+    column-count: 3;
+    column-gap: 0;
+  }
 
   .PictureContainer {
     width: 100%;
@@ -121,10 +129,6 @@
   .Description {
     padding: 0 $margin;
     margin: $margin 0;
-
-    @include multiColumn {
-      padding: 0;
-    }
   }
 
   .PictureTags {
@@ -140,7 +144,7 @@
     max-height: 100vh;
     margin: 0;
 
-    @include multiColumn {
+    @include medium {
       max-width: calc(100vw - (#{$sidebarWidth} + #{$margin}));
       max-height: 85vh;
     }

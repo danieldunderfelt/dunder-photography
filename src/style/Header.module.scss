@@ -7,14 +7,25 @@
 }
 
 .LogoLink {
+  display: block;
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .HeaderContent {
   width: 3rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
   background: $dark;
   height: 100%;
   color: #ddd;
+
+  @include medium {
+    width: 4rem;
+    padding: 0.5rem;
+  }
 }
 
 .HeaderText {
