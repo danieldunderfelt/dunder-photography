@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PictureTags from './PictureTags'
 
-const Picture = ({ picture, linkTo, showInfo = true }) => {
+const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
   const { title, file, alt, description, tags } = picture || {}
   const LinkComponent = linkTo ? Link : 'span'
 
@@ -11,14 +11,19 @@ const Picture = ({ picture, linkTo, showInfo = true }) => {
     <div className={styles.PictureContainer}>
       <LinkComponent to={linkTo}>
         <img className={styles.Picture} alt={alt} src={file} />
-        {showInfo && (
+        {showInfo && !overlay && (
           <div className={styles.PictureInfo}>
             <h2 className={styles.PictureTitle}>{title}</h2>
             <div className={styles.Description}>{description}</div>
           </div>
         )}
+        {overlay && (
+          <div className={styles.VisibleOverlay}>
+            <h2 className={styles.OverlayTitle}>{overlay}</h2>
+          </div>
+        )}
       </LinkComponent>
-      {showInfo && <PictureTags tags={tags} />}
+      {showInfo && !overlay && <PictureTags tags={tags} />}
     </div>
   )
 }

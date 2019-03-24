@@ -9,6 +9,11 @@
 }
 
 .ListHeading {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 1rem 0;
+  text-align: center;
 }
 
 .PictureContainer {
@@ -43,6 +48,16 @@
   );
 }
 
+.VisibleOverlay {
+  @extend .PictureInfo;
+  opacity: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75) 00%,
+    rgba(0, 0, 0, 0) 30%
+  );
+}
+
 .Picture {
   display: block;
   transition: transform 0.5s ease-out;
@@ -54,6 +69,11 @@
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 900;
+}
+
+.OverlayTitle {
+  @extend .PictureTitle;
+  font-size: 1.5rem;
 }
 
 .Description {
@@ -70,7 +90,7 @@
   margin: 0 0 ($margin / 2);
   padding: 1rem 1rem 0;
   list-style: none;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 
   li {
     white-space: nowrap;
