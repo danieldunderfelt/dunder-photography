@@ -5,8 +5,7 @@ import PictureTags from './PictureTags'
 
 const Picture = ({ picture, linkTo, showInfo = true }) => {
   const { title, file, alt, description, tags } = picture || {}
-
-  const LinkComponent = linkTo ? Link : React.Fragment
+  const LinkComponent = linkTo ? Link : 'span'
 
   return (
     <div className={styles.PictureContainer}>

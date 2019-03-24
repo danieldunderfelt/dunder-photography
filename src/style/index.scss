@@ -20,7 +20,7 @@ body {
 }
 
 body {
-  background: $dark;
+  background: lighten($dark, 2%);
 }
 
 img {

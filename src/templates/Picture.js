@@ -19,10 +19,12 @@ class PictureRoute extends React.Component {
           <title>{`${title} by Daniel Dunderfelt`}</title>
         </Helmet>
         <div className={styles.PicturePage}>
-          <h2 className={styles.PictureTitle}>{title}</h2>
-          <PictureTags tags={tags} />
           <Picture picture={picture} showInfo={false} />
-          <div className={styles.Description}>{description}</div>
+          <div className={styles.PictureInfo}>
+            <h2 className={styles.PictureTitle}>{title}</h2>
+            <PictureTags tags={tags} />
+            <div className={styles.Description}>{description}</div>
+          </div>
         </div>
       </Layout>
     )

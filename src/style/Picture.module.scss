@@ -65,6 +65,7 @@
   bottom: 0;
   width: 100%;
   display: flex;
+  justify-content: flex-end;
   flex-wrap: nowrap;
   margin: 0 0 ($margin / 2);
   padding: 1rem 1rem 0;
@@ -120,15 +121,46 @@
 
 .PicturePage {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0 auto;
 
+  .PictureInfo {
+    position: static;
+    opacity: 1;
+    background: transparent;
+    width: 100%;
+    flex: 1 1 auto;
+    pointer-events: all;
+    max-width: 650px;
+
+    @include medium {
+      width: 450px;
+    }
+  }
+
   .PictureTitle,
   .Description {
-    padding: 0 $margin;
-    margin: $margin 0;
+    padding: 0;
+    color: $textColor;
+  }
+
+  .PictureTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: #ffffff;
+
+    @include medium {
+      font-size: 2.75rem;
+    }
+  }
+
+  .Description {
+    margin-top: $margin * 2;
   }
 
   .PictureTags {
@@ -136,17 +168,19 @@
     opacity: 1;
     padding: 0;
     margin: 0 0 $margin 0;
+    justify-content: flex-start;
+    pointer-events: all;
+    color: $lightGrey;
+  }
+
+  .PictureContainer {
+    max-width: 100%;
   }
 
   .Picture {
     width: auto;
-    max-width: 100%;
     max-height: 100vh;
     margin: 0;
-
-    @include medium {
-      max-width: calc(100vw - (#{$sidebarWidth} + #{$margin}));
-      max-height: 85vh;
-    }
+    transform: none !important;
   }
 }
