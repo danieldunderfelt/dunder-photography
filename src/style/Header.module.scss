@@ -6,7 +6,33 @@
   padding: 0;
 }
 
+.HeaderNav {
+  width: 15rem;
+  background: $dark;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  margin-left: 3rem;
+  z-index: 1;
+  border-left: 1px solid lighten($dark, 7%);
+  box-shadow: 3px 0 20px rgba(0,0,0,0.5);
+
+  @include medium {
+    margin-left: 4rem;
+  }
+}
+
 .LogoLink {
+  background: transparent;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: inherit;
   display: block;
   transition: transform 0.2s ease-out;
 
@@ -21,6 +47,8 @@
   background: $dark;
   height: 100%;
   color: #ddd;
+  position: relative;
+  z-index: 10;
 
   @include medium {
     width: 4rem;
