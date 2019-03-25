@@ -74,17 +74,11 @@ p {
   }
 }
 
-button,
 a {
   font-family: inherit;
   color: inherit;
   outline: 0;
   text-decoration: none;
-  transition: transform 0.075s ease-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 p a {

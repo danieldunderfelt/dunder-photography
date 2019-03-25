@@ -20,10 +20,14 @@
   position: relative;
   overflow: hidden;
 
-  &:hover {
+  &.active {
     %overlay {
       opacity: 1;
       pointer-events: all;
+    }
+
+    .PictureInfo {
+      transform: scale(1);
     }
 
     .Picture {
@@ -33,6 +37,7 @@
 }
 
 .PictureInfo {
+  display: block;
   @extend %overlay;
   top: 0;
   left: 0;
@@ -46,6 +51,8 @@
     rgba(0, 0, 0, 0) 70%,
     rgba(0, 0, 0, 0.7) 100%
   );
+  transform: scale(1.05);
+  transition: transform 0.3s ease-out, opacity 0.2s ease-out;
 }
 
 .VisibleOverlay {
@@ -157,6 +164,7 @@
     flex: 1 1 auto;
     pointer-events: all;
     max-width: 650px;
+    transform: none;
 
     @include medium {
       width: 450px;

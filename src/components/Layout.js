@@ -6,7 +6,7 @@ import Header from './Header'
 import '../style/index.scss'
 import styles from '../style/Layout.module.scss'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, isHome = false }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -72,7 +72,7 @@ const TemplateWrapper = ({ children }) => (
         </Helmet>
         <div className={styles.Viewport}>
           <div className={classnames(styles.LayoutWrapper)}>
-            <Header />
+            <Header isHome={isHome} />
             <div className={styles.Page}>{children}</div>
           </div>
         </div>

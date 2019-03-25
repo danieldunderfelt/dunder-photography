@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   let pictures = get(data, 'allPicture.edges', [])
 
   return (
-    <Layout>
+    <Layout isHome={true}>
       <Helmet title={config.siteTitle} />
       <SEO />
       <PictureIndex pictures={pictures} />

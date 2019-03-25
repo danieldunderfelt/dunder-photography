@@ -2,7 +2,6 @@ import React from 'react'
 import styles from '../style/Picture.module.scss'
 import Picture from './Picture'
 import { kebabCase } from 'lodash'
-import { Link } from 'gatsby'
 
 const PictureIndex = ({ pictures }) => {
   return (

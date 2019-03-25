@@ -1,13 +1,18 @@
 import React from 'react'
 import styles from '../style/Header.module.scss'
 import { Link } from 'gatsby'
-import { IoMdMail, IoMdBook, IoMdArrowBack, IoMdApps } from 'react-icons/io'
+import {
+  IoMdMail,
+  IoMdBook,
+  IoMdArrowRoundBack,
+  IoMdApps,
+} from 'react-icons/io'
 
 const Nav = ({ close }) => {
   return (
     <div className={styles.NavContent}>
       <Link to={'/'} onClick={close}>
-        <IoMdArrowBack color="#dddddd" /> Home
+        <IoMdArrowRoundBack color="#dddddd" /> Home
       </Link>
       <Link to={'/tags'} onClick={close}>
         <IoMdApps color="#dddddd" /> Subjects

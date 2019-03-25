@@ -4,7 +4,11 @@ import logo from '../img/logo_inverted.png'
 
 const Logo = () => (
   <>
-    <img src={logo} className={commonStyles.LogoImage} />
+    <img
+      alt="Dunder Photography logo"
+      src={logo}
+      className={commonStyles.LogoImage}
+    />
     <h1 className={commonStyles.Logo}>
       <span className={commonStyles.dunder}>Dunder</span>
       <span className={commonStyles.photography}>Photography</span>
