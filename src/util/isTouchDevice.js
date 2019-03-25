@@ -1,12 +1,25 @@
+import { invoke, get } from 'lodash'
+
 export function isTouchDevice() {
+  let win
+  let doc
+
+  try {
+    win = window || {}
+    doc = document || {}
+  } catch (err) {
+    win = {}
+    doc = {}
+  }
+
   const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
   const mq = function(query) {
-    return window.matchMedia(query).matches
+    return get(invoke(win, 'matchMedia', query), 'matches')
   }
 
   if (
-    'ontouchstart' in window ||
-    (window.DocumentTouch && document instanceof window.DocumentTouch)
+    'ontouchstart' in win ||
+    (win.DocumentTouch && doc instanceof win.DocumentTouch)
   ) {
     return true
   }
