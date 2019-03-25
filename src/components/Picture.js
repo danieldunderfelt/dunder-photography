@@ -9,47 +9,51 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
   const LinkComponent = linkTo ? Link : 'div'
 
   const [active, setActive] = useState(false)
+  const onClick = useCallback(() => setActive(!active), [active])
 
-  const onClick = useCallback(
+  const onClickLink = useCallback(
     e => {
       if (!active && isTouchDevice()) {
         e.preventDefault()
       }
-
-      setActive(!active)
     },
     [active]
   )
 
   const onMouseOver = useCallback(() => {
-    setActive(true)
+    if (!isTouchDevice()) {
+      setActive(true)
+    }
   }, [])
 
   const onMouseOut = useCallback(() => {
-    setActive(false)
+    if (!isTouchDevice()) {
+      setActive(false)
+    }
   }, [])
 
   return (
-    <LinkComponent
+    <div
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseOut}
       onClick={onClick}
-      to={linkTo}
       className={`${styles.PictureContainer} ${active ? styles.active : ''}`}>
-      <img className={styles.Picture} alt={alt} src={file} />
-      {showInfo && !overlay && (
-        <div className={styles.PictureInfo}>
-          <h2 className={styles.PictureTitle}>{title}</h2>
-          <div className={styles.Description}>{description}</div>
-        </div>
-      )}
+      <LinkComponent onClick={onClickLink} to={linkTo}>
+        <img className={styles.Picture} alt={alt} src={file} />
+        {showInfo && !overlay && (
+          <div className={styles.PictureInfo}>
+            <h2 className={styles.PictureTitle}>{title}</h2>
+            <div className={styles.Description}>{description}</div>
+          </div>
+        )}
+      </LinkComponent>
       {overlay && (
         <div className={styles.VisibleOverlay}>
           <h2 className={styles.OverlayTitle}>{overlay}</h2>
         </div>
       )}
       {showInfo && !overlay && <PictureTags tags={tags} />}
-    </LinkComponent>
+    </div>
   )
 }
 
