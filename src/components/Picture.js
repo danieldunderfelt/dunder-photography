@@ -2,6 +2,7 @@ import styles from '../style/Picture.module.scss'
 import React, { useState, useCallback } from 'react'
 import { Link } from 'gatsby'
 import PictureTags from './PictureTags'
+import { isTouchDevice } from '../util/isTouchDevice'
 
 const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
   const { title, file, alt, description, tags } = picture || {}
@@ -11,7 +12,10 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
 
   const onClick = useCallback(
     e => {
-      e.preventDefault()
+      if (!active && isTouchDevice()) {
+        e.preventDefault()
+      }
+
       setActive(!active)
     },
     [active]
@@ -26,17 +30,18 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
   }, [])
 
   return (
-    <div
+    <LinkComponent
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseOut}
       onClick={onClick}
+      to={linkTo}
       className={`${styles.PictureContainer} ${active ? styles.active : ''}`}>
       <img className={styles.Picture} alt={alt} src={file} />
       {showInfo && !overlay && (
-        <LinkComponent to={linkTo} className={styles.PictureInfo}>
+        <div className={styles.PictureInfo}>
           <h2 className={styles.PictureTitle}>{title}</h2>
           <div className={styles.Description}>{description}</div>
-        </LinkComponent>
+        </div>
       )}
       {overlay && (
         <div className={styles.VisibleOverlay}>
@@ -44,7 +49,7 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
         </div>
       )}
       {showInfo && !overlay && <PictureTags tags={tags} />}
-    </div>
+    </LinkComponent>
   )
 }
 

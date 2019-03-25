@@ -17,6 +17,7 @@
 }
 
 .PictureContainer {
+  display: block;
   position: relative;
   overflow: hidden;
 
@@ -28,6 +29,10 @@
 
     .PictureInfo {
       transform: scale(1);
+    }
+
+    .PictureTags {
+      transform: translateY(0);
     }
 
     .Picture {
@@ -98,6 +103,8 @@
   padding: 1rem 1rem 0;
   list-style: none;
   font-size: 0.8rem;
+  transform: translateY(100%);
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 
   li {
     white-space: nowrap;
@@ -201,6 +208,7 @@
     justify-content: flex-start;
     pointer-events: all;
     color: $lightGrey;
+    transform: none;
   }
 
   .PictureContainer {
