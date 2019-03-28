@@ -44,7 +44,7 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
           {linkTo && (
             <Link
               className={`${styles.PictureLink} ${
-                !isTouch ? styles.Deemphasize : ''
+                !isTouch ? styles.Hide : ''
               }`}
               to={linkTo}>
               View
