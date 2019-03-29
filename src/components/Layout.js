@@ -6,7 +6,9 @@ import Header from './Header'
 import '../style/index.scss'
 import styles from '../style/Layout.module.scss'
 
-window.USER_CAN_HOVER = false
+try {
+  ;(window || {}).USER_CAN_HOVER = false
+} catch (err) {}
 
 const TemplateWrapper = ({ children, isHome = false }) => {
   useEffect(() => {
@@ -14,14 +16,14 @@ const TemplateWrapper = ({ children, isHome = false }) => {
 
     function onFirstTouch() {
       clearTimeout(timer)
-      window.USER_CAN_HOVER = false
+      ;(window || {}).USER_CAN_HOVER = false
       document.body.classList.remove('user-can-hover')
       removeFirstHoverListener()
     }
 
     function onFirstHover(e) {
       timer = setTimeout(() => {
-        window.USER_CAN_HOVER = true
+        ;(window || {}).USER_CAN_HOVER = true
         document.body.classList.add('user-can-hover')
         removeFirstHoverListener()
       }, 300)
