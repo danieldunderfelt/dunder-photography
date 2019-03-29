@@ -4,14 +4,12 @@ import { Link, navigate } from 'gatsby'
 import PictureTags from './PictureTags'
 import { isTouchDevice } from '../util/isTouchDevice'
 
-const isTouch = isTouchDevice()
-
 const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
   const { title, file, alt, description, tags } = picture || {}
-
   const [active, setActive] = useState(false)
+
   const onClick = useCallback(() => {
-    if (!isTouch && linkTo) {
+    if ((!isTouchDevice() || overlay) && linkTo) {
       navigate(linkTo)
     } else {
       setActive(!active)
@@ -19,13 +17,13 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
   }, [active])
 
   const onMouseOver = useCallback(() => {
-    if (!isTouch) {
+    if (!isTouchDevice()) {
       setActive(true)
     }
   }, [])
 
   const onMouseOut = useCallback(() => {
-    if (!isTouch) {
+    if (!isTouchDevice()) {
       setActive(false)
     }
   }, [])
@@ -39,12 +37,14 @@ const Picture = ({ picture, overlay, linkTo, showInfo = true }) => {
       <img className={styles.Picture} alt={alt} src={file} />
       {showInfo && !overlay && (
         <div className={styles.PictureInfo}>
-          <h2 className={styles.PictureTitle}>{title}</h2>
-          <div className={styles.Description}>{description}</div>
+          <div>
+            <h2 className={styles.PictureTitle}>{title}</h2>
+            <div className={styles.Description}>{description}</div>
+          </div>
           {linkTo && (
             <Link
               className={`${styles.PictureLink} ${
-                !isTouch ? styles.Hide : ''
+                !isTouchDevice() ? styles.Hide : ''
               }`}
               to={linkTo}>
               View
