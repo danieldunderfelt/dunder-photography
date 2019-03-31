@@ -23,7 +23,7 @@ collections:
       preview: false
     fields:
       - { name: 'title', label: 'Title', widget: 'string' }
-      - { name: 'timestamp', label: 'Timestamp', widget: 'dateTime', format: 'YYYY-MM-DDTHH:mm:ssZ' }
+      - { name: 'timestamp', label: 'Timestamp', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ssZ' }
       - { name: 'file', label: 'File', widget: 'image', allow_multiple: false }
       - { name: 'alt', label: 'Alt', widget: 'string' }
       - { name: 'description', label: 'Description', widget: 'markdown' }
