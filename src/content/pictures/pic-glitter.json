@@ -3,5 +3,11 @@
   "timestamp": "2019-04-19T09:34:00+03:00",
   "file": "/img/around_the_house-2.jpg",
   "alt": "Glittery blue flower",
-  "description": "A close-up of a glittery blue flower, among the first I've seen this year. Canon EOS R, EF 100mm F/2.8 L Macro."
+  "description": "A close-up of a glittery blue flower, among the first I've seen this year. Canon EOS R, EF 100mm F/2.8 L Macro.",
+  "tags": [
+    "macro",
+    "flowers",
+    "nature",
+    "blue"
+  ]
 }
