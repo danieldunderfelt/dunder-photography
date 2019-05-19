@@ -1,32 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import classnames from 'classnames'
 import Header from './Header'
 import '../style/index.scss'
 import styles from '../style/Layout.module.scss'
+import pictureStyles from '../style/Picture.module.scss'
+
+let macy = () => {}
+let win = {}
 
 try {
-  ;(window || {}).USER_CAN_HOVER = false
+  win = window || {}
+  win.USER_CAN_HOVER = false
+  macy = require('macy')
 } catch (err) {}
 
 const TemplateWrapper = ({ children, isHome = false }) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     let timer = 0
 
     function onFirstTouch() {
       clearTimeout(timer)
-      ;(window || {}).USER_CAN_HOVER = false
+      win.USER_CAN_HOVER = false
       document.body.classList.remove('user-can-hover')
       removeFirstHoverListener()
     }
 
     function onFirstHover(e) {
-      timer = setTimeout(() => {
-        ;(window || {}).USER_CAN_HOVER = true
-        document.body.classList.add('user-can-hover')
-        removeFirstHoverListener()
-      }, 300)
+      win.USER_CAN_HOVER = true
+      document.body.classList.add('user-can-hover')
+      removeFirstHoverListener()
     }
 
     function removeFirstHoverListener() {
@@ -38,6 +42,26 @@ const TemplateWrapper = ({ children, isHome = false }) => {
     window.addEventListener('touchstart', onFirstTouch, false)
 
     return removeFirstHoverListener
+  }, [])
+
+  useLayoutEffect(() => {
+    const el = document.querySelector(`.${pictureStyles.PictureList}`)
+
+    if (!el) {
+      return
+    }
+
+    macy({
+      container: el,
+      columns: 3,
+      trueOrder: true,
+      margin: 0,
+      breakAt: {
+        900: 1,
+        1450: 2,
+      },
+      cancelLegacy: true,
+    })
   }, [])
 
   return (

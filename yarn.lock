@@ -8508,6 +8508,11 @@ ltcdr@^2.2.1:
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
   integrity sha1-Wrh60dTB2rjowIu/A37gwZAih88=
 
+macy@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/macy/-/macy-2.5.0.tgz#60b1fa80ee57b2e005110f4f0cb74f798d786a52"
+  integrity sha512-pmFmJm9ivdMm0ZwlcF77XLu7pX8fuw7ryY2l49Sq7KI5ZE/n+OTRV9JIv+629Enj1ZUZSiSt3lsaCiNGM0oAmA==
+
 magic-string@^0.22.4:
   version "0.22.5"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.22.5.tgz#8e9cf5afddf44385c1da5bc2a6a0dbd10b03657e"
